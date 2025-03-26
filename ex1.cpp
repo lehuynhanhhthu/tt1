@@ -1,16 +1,26 @@
-//Exercise 1: Fibonacci Series
+//Exercise 1
 #include<iostream>
 using namespace std;
-int fibo(int n) {
-	if (n == 0)return 0;
-	if (n == 1)return 1;
-	return fibo(n - 1) + fibo(n - 2);
+int findK(int a[], int n, int k) {
+	{
+		for (int i = 0; i < n; i++) {
+			if (a[i] == k) {
+				return i;
+			}
+		}
+		return -1;
+	}
 }
 int main() {
+	int k;
+	int a[100];
 	int n;
 	cin >> n;
 	for (int i = 0; i < n; i++) {
-		cout << fibo(i) << " ";
+		cin >> a[i];
 	}
+	cin >> k;
+	cout << findK(a, n, k);
 	return 0;
+
 }

@@ -1,13 +1,26 @@
-//Exercise 2: Factorial of a Number
+//Exercise 2
 #include<iostream>
 using namespace std;
-long long giaithua(int n) {
-	if (n == 1 || n == 0) return 1;
-	return n * giaithua(n - 1);
+int findK(int a[], int n, int k) {
+	int last = a[n - 1];
+	a[n - 1] = k;
+	int i = 0;
+	while ( a[i] != k) {
+		i++;
+	}
+	a[n - 1] = last;
+	if (i < n && a[i] == k) {
+		return i;
+	}
+	return -1;
 }
 int main() {
-	int n;
+	int n, k, a[100];
 	cin >> n;
-	cout << giaithua(n);
+	for (int i = 0; i < n; i++) {
+		cin >> a[i];
+	}
+	cin >> k;
+	cout << findK(a, n, k);
 	return 0;
 }
